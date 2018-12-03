@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
     private Button btnBack;
     @Override
@@ -18,7 +18,8 @@ class Main2Activity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onStop();
+                Main2Activity.super.finish();
+
             }
         });
     }

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Handle button click CODE
         handleClickAnimationCode(btnFadeInCode, initFadeInAnimation());
+        handleClickAnimationCode(btnFadeOutCode, initFadeOutAnimation());
         handleClickAnimationCode(btnBlinkCode, initBlinkAnimation());
 
         //ImageView click
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent iNewActivity = new Intent(MainActivity.this, Main2Activity.class);
                 startActivity(iNewActivity);
-                overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
+                overridePendingTransition(R.anim.anim_slide_up, R.anim.anim_fade_out);
             }
         });
 
@@ -102,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
         animation.setAnimationListener(animationListener);
 
         //Handle button click
-        btnFadeInXml.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ivUitLogo.setAnimation(animation);
+                ivUitLogo.startAnimation(animation);
             }
         });
     }
